@@ -14,8 +14,8 @@ export class FrameworkValidator {
     private errors: string[] = [];
     private warnings: string[] = [];
 
-    // Required dependencies for Canopy Charts
-    private canopyDeps = {
+    // Required dependencies for Vizzy
+    private vizzyDeps = {
         'd3': '^7.8.5',
         'tailwindcss': '^3.3.0',
         '@types/d3': '^7.4.3'
@@ -84,8 +84,8 @@ export class FrameworkValidator {
             }
         });
 
-        // Check Canopy Charts dependencies
-        Object.entries(this.canopyDeps).forEach(([dep, version]) => {
+        // Check Vizzy dependencies
+        Object.entries(this.vizzyDeps).forEach(([dep, version]) => {
             if (!deps[dep]) {
                 warnings.push(`Missing recommended dependency: ${dep} (${version})`);
             } else {

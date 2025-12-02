@@ -26,8 +26,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
   return {
     title: {
-      template: '%s | Canopy Charts',
-      default: 'Canopy Charts'
+      template: '%s | Vizzy',
+      default: 'Vizzy'
     },
     description: t('description'),
     icons: {

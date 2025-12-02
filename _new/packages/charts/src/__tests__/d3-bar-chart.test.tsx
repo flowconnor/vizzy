@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import { D3BarChart } from '@canopy/charts';
+import { D3BarChart } from '@vizzy/charts';
 
 const sampleData = [
 	{ label: 'A', value: 10 },

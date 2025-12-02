@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
 import { Copy, Check, Palette } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/app/(shared)/ui";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -172,7 +172,7 @@ export default function ThemingPage() {
                   <h2 className="text-lg font-semibold">Usage</h2>
                   <CodeSnippetDemo
                     code={`// Import the D3BarChart component
-import { D3BarChart } from '@codeium/canopy-charts';
+import { D3BarChart } from '@codeium/vizzy';
 
 // Use the theme prop to set your desired theme
 function App() {

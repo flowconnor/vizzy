@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/app/(shared)/ui";
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 import { useTranslations } from 'next-intl'

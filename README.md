@@ -1,7 +1,7 @@
-# Canopy Charts
+# Vizzy
 
 <div align="center">
-  <img src="public/favicon.svg" width="180" height="180" alt="Canopy Charts Logo">
+  <img src="public/favicon.svg" width="180" height="180" alt="Vizzy Logo">
   
   <h1>Data Visualization for the AI Era</h1>
   
@@ -49,16 +49,16 @@ This repo is a small monorepo so that the marketing site, CLI, and chart package
 │   └── (shared)/…        # Design system + chart controls/providers reused everywhere
 ├── _new/
 │   └── packages/
-        └── charts/       # `@canopy/charts` – shipping charts, hooks, ui, tests
-├── cli/                  # `canopy-charts` CLI (init/add commands + templates)
-├── examples/             # Small usage samples that import `@canopy/charts`
+        └── charts/       # `@vizzy/charts` – shipping charts, hooks, ui, tests
+├── cli/                  # `vizzy` CLI (init/add commands + templates)
+├── examples/             # Small usage samples that import `@vizzy/charts`
 └── tests/                # Playwright / integration entry points
 ```
 
-- All runtime charts live in `_new/packages/charts`. The exported surface is available via `@canopy/charts`:
+- All runtime charts live in `_new/packages/charts`. The exported surface is available via `@vizzy/charts`:
 
   ```tsx
-  import { D3BarChart, ChartStyle } from '@canopy/charts';
+  import { D3BarChart, ChartStyle } from '@vizzy/charts';
 
   export function RevenueCard() {
     return (
@@ -74,7 +74,7 @@ This repo is a small monorepo so that the marketing site, CLI, and chart package
   }
   ```
 
-- The CLI now scaffolds **thin wrappers** that import `@canopy/charts`. When you run `/chart add`, the generated files live next to your code – no legacy copies of the old `app/_components/charts`.
+- The CLI now scaffolds **thin wrappers** that import `@vizzy/charts`. When you run `/chart add`, the generated files live next to your code – no legacy copies of the old `app/_components/charts`.
 - Shared UI such as the color picker and chart controls has moved to `app/(shared)/charts-ui`. Any new site or docs feature should import from there instead of using relative paths into the Next.js app.
 
 ## Local Development
@@ -118,5 +118,5 @@ The CLI has its own `package.json` in `cli/`; use `npm install && npm test` insi
   <h2>The Future of Data Visualization is Here</h2>
   <p><a href="#getting-started">Get Started</a> • <a href="#documentation">Documentation</a> • <a href="#community">Community</a></p>
   
-  <sub>MIT © Canopy Charts</sub>
+  <sub>MIT © Vizzy</sub>
 </div>

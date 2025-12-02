@@ -1,6 +1,6 @@
 # Examples
 
-The `examples/` directory contains small React components that import `@canopy/charts`. You can render any of them inside the Next.js app or in a standalone sand-box:
+The `examples/` directory contains small React components that import `@vizzy/charts`. You can render any of them inside the Next.js app or in a standalone sand-box:
 
 ```bash
 # run the main app

@@ -5,7 +5,7 @@ import { Installer } from "../installer";
 
 export async function add(chart?: string) {
   console.clear();
-  console.log(chalk.hex("#34D399").bold("Canopy Charts"));
+  console.log(chalk.hex("#34D399").bold("Vizzy"));
   console.log(chalk.gray("Beautiful D3 charts for modern web apps\n"));
 
   let selectedChart: ChartType;

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Command } from 'lucide-react'
-import { Input } from "@/components/ui/input"
+import { Input } from "@/app/(shared)/ui";
 
 export function AiChartSuggest() {
   const [query, setQuery] = useState('')

@@ -3,11 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Copy, Check } from "lucide-react";
-import { D3BarChart, ChartStyle } from '@canopy/charts';
-import { ChartControls } from "@/app/(shared)/charts-ui/chart-controls";
+import { D3BarChart, ChartStyle } from '@vizzy/charts';
+import { ChartControls } from "@/app/(shared)/charts-ui";
 import { useThemeColor } from "@/app/(shared)/providers/theme-context";
-import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/(shared)/ui";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -436,7 +435,7 @@ export default function BarChart({ data, width = 600, height = 400 }) {
                       </TabsContent>
                     </Tabs>
                     <p className="text-sm text-muted-foreground mt-6">
-                      Canopy Charts requires TypeScript 5.0+, React 18+, and Tailwind CSS 3.0+. Currently in beta, expect frequent updates and improvements.
+                      Vizzy requires TypeScript 5.0+, React 18+, and Tailwind CSS 3.0+. Currently in beta, expect frequent updates and improvements.
                     </p>
                   </div>
                 </div>

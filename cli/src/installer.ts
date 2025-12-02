@@ -14,11 +14,11 @@ interface InstallationOptions {
 }
 
 export async function installOptimizations({ framework, projectPath, chartTypes }: InstallationOptions): Promise<void> {
-    const spinner = ora('Installing Canopy Charts optimizations...').start();
+    const spinner = ora('Installing Vizzy optimizations...').start();
 
     try {
         // Create optimizations directory if it doesn't exist
-        const optimizationsDir = path.join(projectPath, 'canopy-optimizations');
+        const optimizationsDir = path.join(projectPath, 'vizzy-optimizations');
         if (!fs.existsSync(optimizationsDir)) {
             fs.mkdirSync(optimizationsDir, { recursive: true });
         }
@@ -33,7 +33,7 @@ export async function installOptimizations({ framework, projectPath, chartTypes 
         // Update package.json with necessary dependencies
         await updatePackageJson(projectPath, framework);
 
-        spinner.succeed(chalk.green('Successfully installed Canopy Charts optimizations!'));
+        spinner.succeed(chalk.green('Successfully installed Vizzy optimizations!'));
         console.log('\nOptimizations installed for:');
         console.log(chalk.blue(`Framework: ${framework}`));
         console.log(chalk.blue(`Chart Types: ${chartTypes.join(', ')}`));
@@ -55,7 +55,7 @@ function getFrameworkOptimizations(framework: SupportedFramework, _chartTypes: s
     switch (framework) {
         case 'next.js':
             optimizations['next.config.js'] = `
-// Canopy Charts Next.js configuration
+// Vizzy Next.js configuration
 module.exports = {
     // Add framework-specific optimizations
 };`;
@@ -96,12 +96,12 @@ function getFrameworkDependencies(framework: SupportedFramework): Record<string,
         case 'next.js':
             return {
                 ...commonDeps,
-                '@canopy-charts/next': '^1.0.0',
+                '@vizzy/next': '^1.0.0',
             };
         case 'react':
             return {
                 ...commonDeps,
-                '@canopy-charts/react': '^1.0.0',
+                '@vizzy/react': '^1.0.0',
             };
         // Add other frameworks as needed
         default:
@@ -115,7 +115,7 @@ function getFrameworkInstructions(framework: SupportedFramework): string {
             return chalk.yellow(`
 Next steps:
 1. Run 'npm install' to install new dependencies
-2. Import your charts from '@canopy-charts/next'
+2. Import your charts from '@vizzy/next'
 3. Your charts are now optimized for Next.js with SSR and automatic code-splitting!`);
         // Add other frameworks as needed
         default:

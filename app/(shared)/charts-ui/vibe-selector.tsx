@@ -1,12 +1,12 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/app/(shared)/ui";
 import { motion, AnimatePresence } from "framer-motion"
 import clsx from "clsx"
 import { useThemeColor } from '@/app/(shared)/providers/theme-context'
 import { useTranslations } from 'next-intl'
-import { ChartStyle } from '@canopy/charts'
+import { ChartStyle } from '@vizzy/charts'
 import { 
   TreePine, 
   SunMedium, 

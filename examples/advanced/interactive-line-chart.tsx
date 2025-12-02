@@ -1,7 +1,7 @@
  'use client';
 
 import { useMemo, useState } from 'react';
-import { D3LineChart, ChartStyle } from '@canopy/charts';
+import { D3LineChart, ChartStyle } from '@vizzy/charts';
 
 const defaultData = [
 	{ name: 'Jan', primary: 42, secondary: 25, tertiary: 18 },

@@ -1,11 +1,11 @@
 {
-  "name": "canopy-charts",
+  "name": "vizzy",
   "version": "1.0.0",
-  "description": "Beautiful D3 charts for modern web apps",
+  "description": "Vizzy CLI for scaffolding opinionated React + D3 charts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "canopy-charts": "./dist/index.js"
+    "vizzy": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -28,7 +28,7 @@
     "expo",
     "electron"
   ],
-  "author": "Canopy Charts Team",
+  "author": "Vizzy Team",
   "license": "MIT",
   "dependencies": {
     "@antfu/ni": "^0.21.12",

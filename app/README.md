@@ -17,6 +17,6 @@ app/
 When adding a new component:
 1. Ask whether it’s shared between docs + marketing. If yes, put it under `(shared)`.
 2. Keep imports consistent (`@/app/(shared)/…`) – ESLint will block the old `@/app/_components` path.
-3. Docs content should import charts exclusively from `@canopy/charts`.
+3. Docs content should import charts exclusively from `@vizzy/charts`.
 
 

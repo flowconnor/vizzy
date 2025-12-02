@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { D3DonutChart } from '@canopy/charts';
+import { D3DonutChart } from '@vizzy/charts';
 
 const data = [
 	{ label: 'Product', value: 42 },

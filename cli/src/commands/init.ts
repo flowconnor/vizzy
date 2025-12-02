@@ -102,7 +102,7 @@ async function animateCompletionMessage() {
   process.stdout.write('\x1B[2A\x1B[0G' + ' '.repeat(50) + '\n' + ' '.repeat(50));
   
   // Show final message
-  console.log('\x1B[2A\x1B[0G' + chalk.hex("#34D399").bold('Thanks for using Canopy Charts! ⭐'));
+  console.log('\x1B[2A\x1B[0G' + chalk.hex("#34D399").bold('Thanks for using Vizzy! ⭐'));
   console.log(chalk.hex("#34D399").dim('Happy charting ✨\n'));
 }
 
@@ -151,7 +151,7 @@ export async function init() {
   console.log();
 
   // Show required dependencies one by one
-  await typeText('Canopy Charts Requirements:', chalk.cyan.bold);
+  await typeText('Vizzy Requirements:', chalk.cyan.bold);
   await sleep(300);
   let missingDeps = false;
   for (const [dep, version] of Object.entries(REQUIRED_DEPENDENCIES)) {
@@ -260,9 +260,9 @@ export default {
     {
       type: 'list',
       name: 'folderLocation',
-      message: 'Where would you like to install Canopy Charts?',
+      message: 'Where would you like to install Vizzy?',
       choices: projectPaths,
-      default: projectPaths[0]?.value || 'app/canopy'
+      default: projectPaths[0]?.value || 'app/vizzy'
     }
   ]);
 
@@ -272,8 +272,8 @@ export default {
       {
         type: 'input',
         name: 'customPath',
-        message: 'Enter the path where you want to install Canopy Charts:',
-        default: 'src/canopy',
+        message: 'Enter the path where you want to install Vizzy:',
+        default: 'src/vizzy',
         validate: (input: string) => {
           if (!input) return 'Path cannot be empty';
           if (input.includes('..')) return 'Path cannot contain ..';
@@ -307,7 +307,7 @@ export default {
   const { selectedCharts } = answers;
 
   const spinner2 = ora({
-    text: 'Setting up Canopy Charts...',
+    text: 'Setting up Vizzy...',
     color: 'green'
   }).start();
 
@@ -323,7 +323,7 @@ export default {
   await sleep(300);
   
   await typeText("• Add more charts:");
-  await typeText(`  ${chalk.cyan(`canopy-charts add <chart>`)}`);
+  await typeText(`  ${chalk.cyan(`vizzy add <chart>`)}`);
   await sleep(200);
   
   await typeText("• View your charts:");
@@ -331,14 +331,14 @@ export default {
   await sleep(200);
   
   await typeText("• Read the docs:");
-  await typeText(`  ${chalk.cyan(`docs.canopycharts.com`)}`);
+  await typeText(`  ${chalk.cyan(`docs.vizzy.com`)}`);
   
   // Add lots of spacing before final message
   console.log('\n\n\n');
   
   // Final message with typing animation
-  await typeText('Thanks for using Canopy Charts!', chalk.hex("#34D399").bold);
-  await typeText('Give us a ⭐ on GitHub: ' + chalk.cyan('https://github.com/cbarrett3/canopy-charts').toString());
+  await typeText('Thanks for using Vizzy!', chalk.hex("#34D399").bold);
+  await typeText('Give us a ⭐ on GitHub: ' + chalk.cyan('https://github.com/cbarrett3/vizzy').toString());
   await typeText('See you around!', chalk.hex("#34D399").dim);
   
   // Final spacing

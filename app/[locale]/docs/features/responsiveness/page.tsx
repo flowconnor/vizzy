@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 
 export const metadata: Metadata = {
-  title: 'Responsiveness - Canopy Charts',
-  description: 'Learn about the responsive design features of Canopy Charts',
+  title: 'Responsiveness - Vizzy',
+  description: 'Learn about the responsive design features of Vizzy',
 };
 
 export default function ResponsivenessPage() {
@@ -13,7 +13,7 @@ export default function ResponsivenessPage() {
     <div className="prose dark:prose-invert max-w-none">
       <h1>Responsiveness</h1>
       <p>
-        Canopy Charts components are designed to be fully responsive, automatically
+        Vizzy components are designed to be fully responsive, automatically
         adjusting to their container size while maintaining optimal readability and
         interaction capabilities.
       </p>

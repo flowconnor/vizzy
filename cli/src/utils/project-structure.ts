@@ -12,16 +12,16 @@ export async function detectProjectStructure(projectPath: string): Promise<Proje
 
   if (await fs.pathExists(path.join(projectPath, "app"))) {
     paths.push({
-      name: "app/canopy",
-      value: "app/canopy",
-      short: "app/canopy",
+      name: "app/vizzy",
+      value: "app/vizzy",
+      short: "app/vizzy",
     });
 
     if (await fs.pathExists(path.join(projectPath, "app/components"))) {
       paths.push({
-        name: "app/components/canopy",
-        value: "app/components/canopy",
-        short: "app/components/canopy",
+        name: "app/components/vizzy",
+        value: "app/components/vizzy",
+        short: "app/components/vizzy",
       });
     }
   }
@@ -29,25 +29,25 @@ export async function detectProjectStructure(projectPath: string): Promise<Proje
   if (await fs.pathExists(path.join(projectPath, "pages"))) {
     if (await fs.pathExists(path.join(projectPath, "components"))) {
       paths.push({
-        name: "components/canopy",
-        value: "components/canopy",
-        short: "components/canopy",
+        name: "components/vizzy",
+        value: "components/vizzy",
+        short: "components/vizzy",
       });
     }
   }
 
   if (await fs.pathExists(path.join(projectPath, "src"))) {
     paths.push({
-      name: "src/canopy",
-      value: "src/canopy",
-      short: "src/canopy",
+      name: "src/vizzy",
+      value: "src/vizzy",
+      short: "src/vizzy",
     });
 
     if (await fs.pathExists(path.join(projectPath, "src/components"))) {
       paths.push({
-        name: "src/components/canopy",
-        value: "src/components/canopy",
-        short: "src/components/canopy",
+        name: "src/components/vizzy",
+        value: "src/components/vizzy",
+        short: "src/components/vizzy",
       });
     }
   }

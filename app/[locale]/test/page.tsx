@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { D3BarChart, D3LineChart, ChartStyle } from '@canopy/charts'
-import { BarChartElements } from '@/app/(shared)/charts-ui/bar-chart-elements'
+import { D3BarChart, D3LineChart, ChartStyle } from '@vizzy/charts'
+import { BarChartElements } from '@/app/(shared)/charts-ui'
 
 // shared chart dimensions
 const CHART_HEIGHT = 400;

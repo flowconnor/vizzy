@@ -3,8 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { useSidebar } from '@/app/(site)/components/layout/sidebar-context';
 import { Search, Menu, X, ChevronRight, PanelLeftClose, PanelLeft, ChevronUp, ChevronDown } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Input, Button } from "@/app/(shared)/ui";
 import Link from "next/link";
 import { cn } from "@/lib/utils"
 import { useParams } from 'next/navigation';
@@ -40,6 +39,7 @@ export default function DocsLayout({
   const gettingStartedT = useTranslations('Docs.getting-started');
   const visualizationsT = useTranslations('Docs.visualizations');
   const featuresT = useTranslations('Docs.features');
+  const playgroundT = useTranslations('Docs.playground');
   const contributingT = useTranslations('Docs.contributing');
   const searchT = useTranslations('Docs');
 
@@ -70,6 +70,12 @@ export default function DocsLayout({
         { label: featuresT('responsiveness'), href: `/${locale}/docs/responsiveness` },
         { label: featuresT('accessibility'), href: `/${locale}/docs/accessibility` },
       ]
+    },
+    {
+      label: playgroundT('title'),
+      items: [
+        { label: playgroundT('examples'), href: `/${locale}/docs/examples` },
+      ],
     },
     {
       label: contributingT('title'),

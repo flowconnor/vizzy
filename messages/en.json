@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "title": "Craft D3 Charts for React - Canopy Charts",
+    "title": "Craft D3 Charts for React - Vizzy",
     "description": "A fully customizable, low-level visualization library powered by D3 and styled with Tailwind."
   },
   "navigation": {
@@ -19,7 +19,7 @@
     "getStarted": "Get Started"
   },
   "hero": {
-    "title": "Canopy Charts",
+    "title": "Vizzy",
     "tagline": {
       "part1": "Beautiful and intuitive",
       "part2": "D3.js visualizations",
@@ -40,7 +40,7 @@
     "search": "Search documentation...",
     "introduction": {
       "title": "Introduction",
-      "welcome": "Welcome to Canopy Charts documentation. This guide will help you get started with our powerful charting library that combines the flexibility of D3.js with the modern features of React.",
+      "welcome": "Welcome to Vizzy documentation. This guide will help you get started with our powerful charting library that combines the flexibility of D3.js with the modern features of React.",
       "features": {
         "title": "Key Features",
         "ownership": {
@@ -66,7 +66,7 @@
       },
       "philosophy": {
         "title": "Philosophy",
-        "description": "Canopy Charts is not a traditional component library. Instead of installing a dependency, you copy and paste the components you need. This gives you complete control over your charts.",
+        "description": "Vizzy is not a traditional component library. Instead of installing a dependency, you copy and paste the components you need. This gives you complete control over your charts.",
         "why": {
           "title": "Why this approach?",
           "description": "Traditional chart libraries often couple style with implementation. By providing copy-paste components:",
@@ -88,12 +88,12 @@
       },
       "installation": {
         "title": "Installation",
-        "description": "Get started with Canopy Charts in your React project."
+        "description": "Get started with Vizzy in your React project."
       }
     },
     "installation": {
       "title": "Installation",
-      "intro": "Get started with Canopy Charts in minutes. A modern React charting library built with TypeScript and Tailwind CSS.",
+      "intro": "Get started with Vizzy in minutes. A modern React charting library built with TypeScript and Tailwind CSS.",
       "tabs": {
         "npm": "npm",
         "pnpm": "pnpm",
@@ -104,7 +104,7 @@
       "steps": {
         "init": {
           "title": "Create Project",
-          "description": "Initialize a new Canopy Charts project with all dependencies pre-configured."
+          "description": "Initialize a new Vizzy project with all dependencies pre-configured."
         },
         "add": {
           "title": "Add Chart",
@@ -115,7 +115,7 @@
         "title": "CLI Commands",
         "init": {
           "title": "Initialize Project",
-          "description": "Start your Canopy Charts project",
+          "description": "Start your Vizzy project",
           "features": {
             "structure": "Sets up project structure",
             "dependencies": "Installs required dependencies",
@@ -406,6 +406,54 @@
       "animations": "Animations",
       "responsiveness": "Responsiveness",
       "accessibility": "Accessibility"
+    },
+    "playground": {
+      "title": "Playground",
+      "examples": "Examples Gallery"
+    },
+    "examplesPage": {
+      "title": "Examples Gallery",
+      "description": "Preview real components copied directly from the repo's /examples folder. Each card renders the live React component so you can see animations, tooltips, and theming options before copying anything into your product.",
+      "cta": "Read the examples guide",
+      "ctaDescription": "Step-by-step instructions for running every example locally.",
+      "ctaButton": "Open README",
+      "tags": {
+        "comparison": "Comparison",
+        "composition": "Composition",
+        "timeSeries": "Time Series",
+        "interaction": "Interaction",
+        "advanced": "Advanced"
+      },
+      "level": {
+        "basic": "Beginner",
+        "advanced": "Advanced"
+      },
+      "cards": {
+        "basicBar": {
+          "title": "Basic Bar Chart",
+          "description": "A minimalist comparison chart with labeled axes and optional legend."
+        },
+        "donut": {
+          "title": "Donut Composition",
+          "description": "Visualize part-to-whole breakdowns with animated slices and labels."
+        },
+        "stacked": {
+          "title": "Stacked Bar Series",
+          "description": "Show composition and totals per category with stacked segments."
+        },
+        "stream": {
+          "title": "Streaming Areas",
+          "description": "Animate flowing areas for multi-series timelines."
+        },
+        "tree": {
+          "title": "Treemap Allocation",
+          "description": "Summarize nested categories with responsive rectangles."
+        },
+        "interactiveLine": {
+          "title": "Interactive Line Demo",
+          "description": "Advanced example with hover tooltips, focus states, and vibe selector."
+        }
+      }
     },
     "contributing": {
       "title": "Contributing",

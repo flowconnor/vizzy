@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/app/(shared)/ui";
 import { Keyboard, Eye, Speaker, Code2, Copy, Check } from "lucide-react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -203,7 +203,7 @@ export default function AccessibilityPage() {
         </div>
 
         <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-6">
-          Canopy Charts is committed to making data visualization accessible to everyone. Our D3-based components are continuously evolving to meet and exceed WCAG 2.1 guidelines, ensuring a seamless experience across all devices and assistive technologies.
+          Vizzy is committed to making data visualization accessible to everyone. Our D3-based components are continuously evolving to meet and exceed WCAG 2.1 guidelines, ensuring a seamless experience across all devices and assistive technologies.
         </p>
 
         <div className="space-y-6">

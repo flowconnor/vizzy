@@ -1,16 +1,17 @@
 {
-  "name": "create-canopy-charts",
+  "name": "create-vizzy",
   "version": "0.1.0",
-  "description": "A CLI tool to add beautiful, customizable D3 charts to your React project",
+  "description": "Vizzy CLI toolkit for scaffolding React + D3 charts",
   "private": true,
   "bin": {
-    "create-canopy-charts": "./cli/index.js"
+    "create-vizzy": "./cli/index.js"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test:app": "jest --config jest.config.js",
     "test:charts": "jest --config _new/packages/charts/jest.config.ts",
     "test:smoke": "playwright test"
   },

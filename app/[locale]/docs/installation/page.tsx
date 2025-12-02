@@ -81,7 +81,7 @@ const InstallationPage = () => {
                 backgroundImage: "linear-gradient(to right, #22c55e, #4ade80)",
               }}
             >
-              Get started with Canopy Charts
+              Get started with Vizzy
             </h1>
             <div className="absolute -inset-x-4 -inset-y-4 bg-gradient-to-r from-green-500/10 via-green-500/5 to-green-500/10 blur-xl opacity-50 -z-10" />
           </div>
@@ -176,7 +176,7 @@ const InstallationPage = () => {
             Quick Start
           </h2>
           <p className="text-sm text-zinc-400 max-w-2xl">
-            The Canopy Charts CLI helps you get started quickly by checking your project setup, installing dependencies, and adding chart components. When you create a new chart, it sets up all the necessary building blocks including data handling, styling, and animations.
+            The Vizzy CLI helps you get started quickly by checking your project setup, installing dependencies, and adding chart components. When you create a new chart, it sets up all the necessary building blocks including data handling, styling, and animations.
           </p>
           
           <div className="grid gap-4">
@@ -204,31 +204,31 @@ const InstallationPage = () => {
                       <div className="flex items-center gap-4">
                         <div className="flex items-center gap-3">
                           <button
-                            onClick={() => handleCopy("npx canopy-charts@latest init", "create-npx")}
+                            onClick={() => handleCopy("npx vizzy@latest init", "create-npx")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "create-npx" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             npx
                           </button>
                           <button
-                            onClick={() => handleCopy("pnpm dlx canopy-charts@latest init", "create-pnpm")}
+                            onClick={() => handleCopy("pnpm dlx vizzy@latest init", "create-pnpm")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "create-pnpm" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             pnpm
                           </button>
                           <button
-                            onClick={() => handleCopy("yarn dlx canopy-charts@latest init", "create-yarn")}
+                            onClick={() => handleCopy("yarn dlx vizzy@latest init", "create-yarn")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "create-yarn" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             yarn
                           </button>
                           <button
-                            onClick={() => handleCopy("bunx canopy-charts@latest init", "create-bun")}
+                            onClick={() => handleCopy("bunx vizzy@latest init", "create-bun")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "create-bun" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             bun
                           </button>
                           <button
-                            onClick={() => handleCopy("deno run npm:canopy-charts@latest init", "create-deno")}
+                            onClick={() => handleCopy("deno run npm:vizzy@latest init", "create-deno")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "create-deno" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             deno
@@ -237,11 +237,11 @@ const InstallationPage = () => {
                         <div className="w-px h-4 bg-zinc-800" />
                         <button
                           onClick={() => {
-                            const cmd = copied?.startsWith("create-pnpm") ? "pnpm dlx canopy-charts@latest init" :
-                              copied?.startsWith("create-yarn") ? "yarn dlx canopy-charts@latest init" :
-                              copied?.startsWith("create-bun") ? "bunx canopy-charts@latest init" :
-                              copied?.startsWith("create-deno") ? "deno run npm:canopy-charts@latest init" :
-                              "npx canopy-charts@latest init";
+                            const cmd = copied?.startsWith("create-pnpm") ? "pnpm dlx vizzy@latest init" :
+                              copied?.startsWith("create-yarn") ? "yarn dlx vizzy@latest init" :
+                              copied?.startsWith("create-bun") ? "bunx vizzy@latest init" :
+                              copied?.startsWith("create-deno") ? "deno run npm:vizzy@latest init" :
+                              "npx vizzy@latest init";
                             handleCopy(cmd, copied || "create-npx");
                           }}
                           className="p-1.5 rounded-md hover:bg-white/5 transition-colors"
@@ -256,11 +256,11 @@ const InstallationPage = () => {
                       </div>
                     </div>
                     <div className="px-4 py-3 font-mono text-sm text-zinc-100 bg-black/40">
-                      <span className="text-green-500">$</span> {copied?.startsWith("create-pnpm") ? "pnpm dlx canopy-charts@latest init" : 
-                        copied?.startsWith("create-yarn") ? "yarn dlx canopy-charts@latest init" :
-                        copied?.startsWith("create-bun") ? "bunx canopy-charts@latest init" :
-                        copied?.startsWith("create-deno") ? "deno run npm:canopy-charts@latest init" :
-                        "npx canopy-charts@latest init"}
+                      <span className="text-green-500">$</span> {copied?.startsWith("create-pnpm") ? "pnpm dlx vizzy@latest init" : 
+                        copied?.startsWith("create-yarn") ? "yarn dlx vizzy@latest init" :
+                        copied?.startsWith("create-bun") ? "bunx vizzy@latest init" :
+                        copied?.startsWith("create-deno") ? "deno run npm:vizzy@latest init" :
+                        "npx vizzy@latest init"}
                     </div>
                   </div>
                 </div>
@@ -291,31 +291,31 @@ const InstallationPage = () => {
                       <div className="flex items-center gap-4">
                         <div className="flex items-center gap-3">
                           <button
-                            onClick={() => handleCopy("npx canopy-charts add line-chart", "add-npx")}
+                            onClick={() => handleCopy("npx vizzy add line-chart", "add-npx")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "add-npx" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             npx
                           </button>
                           <button
-                            onClick={() => handleCopy("pnpm dlx canopy-charts add line-chart", "add-pnpm")}
+                            onClick={() => handleCopy("pnpm dlx vizzy add line-chart", "add-pnpm")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "add-pnpm" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             pnpm
                           </button>
                           <button
-                            onClick={() => handleCopy("yarn dlx canopy-charts add line-chart", "add-yarn")}
+                            onClick={() => handleCopy("yarn dlx vizzy add line-chart", "add-yarn")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "add-yarn" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             yarn
                           </button>
                           <button
-                            onClick={() => handleCopy("bunx canopy-charts add line-chart", "add-bun")}
+                            onClick={() => handleCopy("bunx vizzy add line-chart", "add-bun")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "add-bun" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             bun
                           </button>
                           <button
-                            onClick={() => handleCopy("deno run npm:canopy-charts add line-chart", "add-deno")}
+                            onClick={() => handleCopy("deno run npm:vizzy add line-chart", "add-deno")}
                             className={`text-xs px-2 py-0.5 rounded transition-colors ${copied === "add-deno" ? "text-green-500 bg-green-500/10" : "text-zinc-500 hover:text-zinc-400"}`}
                           >
                             deno
@@ -324,11 +324,11 @@ const InstallationPage = () => {
                         <div className="w-px h-4 bg-zinc-800" />
                         <button
                           onClick={() => {
-                            const cmd = copied?.startsWith("add-pnpm") ? "pnpm dlx canopy-charts add line-chart" :
-                              copied?.startsWith("add-yarn") ? "yarn dlx canopy-charts add line-chart" :
-                              copied?.startsWith("add-bun") ? "bunx canopy-charts add line-chart" :
-                              copied?.startsWith("add-deno") ? "deno run npm:canopy-charts add line-chart" :
-                              "npx canopy-charts add line-chart";
+                            const cmd = copied?.startsWith("add-pnpm") ? "pnpm dlx vizzy add line-chart" :
+                              copied?.startsWith("add-yarn") ? "yarn dlx vizzy add line-chart" :
+                              copied?.startsWith("add-bun") ? "bunx vizzy add line-chart" :
+                              copied?.startsWith("add-deno") ? "deno run npm:vizzy add line-chart" :
+                              "npx vizzy add line-chart";
                             handleCopy(cmd, copied || "add-npx");
                           }}
                           className="p-1.5 rounded-md hover:bg-white/5 transition-colors"
@@ -343,11 +343,11 @@ const InstallationPage = () => {
                       </div>
                     </div>
                     <div className="px-4 py-3 font-mono text-sm text-zinc-100 bg-black/40">
-                      <span className="text-green-500">$</span> {copied?.startsWith("add-pnpm") ? "pnpm dlx canopy-charts add line-chart" :
-                        copied?.startsWith("add-yarn") ? "yarn dlx canopy-charts add line-chart" :
-                        copied?.startsWith("add-bun") ? "bunx canopy-charts add line-chart" :
-                        copied?.startsWith("add-deno") ? "deno run npm:canopy-charts add line-chart" :
-                        "npx canopy-charts add line-chart"}
+                      <span className="text-green-500">$</span> {copied?.startsWith("add-pnpm") ? "pnpm dlx vizzy add line-chart" :
+                        copied?.startsWith("add-yarn") ? "yarn dlx vizzy add line-chart" :
+                        copied?.startsWith("add-bun") ? "bunx vizzy add line-chart" :
+                        copied?.startsWith("add-deno") ? "deno run npm:vizzy add line-chart" :
+                        "npx vizzy add line-chart"}
                     </div>
                   </div>
                 </div>

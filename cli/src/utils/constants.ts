@@ -1,8 +1,8 @@
 export const CONFIG_FILES = [
-  "canopy.config.json",
-  "canopy.config.js",
-  "canopy.config.cjs",
-]
+  "vizzy.config.json",
+  "vizzy.config.js",
+  "vizzy.config.cjs",
+];
 
 interface ChartInfo {
   name: string;
@@ -46,7 +46,7 @@ export const CHART_REGISTRY: Record<string, ChartInfo> = {
 export type ChartType = keyof typeof CHART_REGISTRY;
 
 export const REQUIRED_DEPENDENCIES: Record<string, string> = {
-  '@canopy/charts': '^0.1.0',
+  '@vizzy/charts': '^0.1.0',
   'd3': '^7.8.5',
   'tailwindcss': '^3.3.0',
   '@types/d3': '^7.4.3',
@@ -78,4 +78,4 @@ export const FRAMEWORKS = [
     display: "Astro",
     color: "yellow",
   },
-]
+];

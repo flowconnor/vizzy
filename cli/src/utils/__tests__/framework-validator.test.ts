@@ -449,7 +449,7 @@ describe('FrameworkValidator', () => {
             expect(result.versions).toHaveProperty('@types/react', '^18.0.0');
         });
 
-        it('handles Canopy Charts dependencies check', async () => {
+        it('handles Vizzy dependencies check', async () => {
             const { root } = createMockProject({
                 framework: 'next.js',
                 dependencies: {

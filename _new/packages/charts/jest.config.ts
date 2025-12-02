@@ -16,8 +16,8 @@ const config: Config = {
 	},
 	transformIgnorePatterns: [],
 	moduleNameMapper: {
-		'^@canopy/charts$': '<rootDir>/src',
-		'^@canopy/charts/(.*)$': '<rootDir>/src/$1',
+		'^@vizzy/charts$': '<rootDir>/src',
+		'^@vizzy/charts/(.*)$': '<rootDir>/src/$1',
 	},
 };
 

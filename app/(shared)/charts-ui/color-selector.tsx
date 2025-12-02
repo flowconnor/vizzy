@@ -2,12 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { clsx } from 'clsx'
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Slider } from "@/components/ui/slider"
+import { Card, Button, Input, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, Popover, PopoverContent, PopoverTrigger, Slider } from "@/app/(shared)/ui";
 import * as d3 from 'd3'
 import { useThemeColor } from '@/app/(shared)/providers/theme-context'
 import { useTranslations } from 'next-intl'

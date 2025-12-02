@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/app/(shared)/ui";
 import { TreePine, SunMedium, Snowflake, Waves, Flame, Wind, Play, Pause } from "lucide-react";
 import { useThemeColor } from '@/app/(shared)/providers/theme-context';
-import { D3BarChart } from '@canopy/charts';
+import { D3BarChart } from '@vizzy/charts';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 

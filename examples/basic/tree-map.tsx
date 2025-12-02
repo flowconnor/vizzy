@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { D3TreeMap } from '@canopy/charts';
+import { D3TreeMap } from '@vizzy/charts';
 
 const data = {
 	name: 'Company',

@@ -1,18 +1,18 @@
-# Canopy Charts CLI
+# Vizzy CLI
 
-> This is the CLI development documentation for Canopy Charts.
+> This is the CLI development documentation for Vizzy.
 >
 > **Purpose**: Development setup, testing, and contribution guidelines for the CLI tool  
-> **App Developer?** For using Canopy Charts in your app, see our [main documentation](../README.md)
+> **App Developer?** For using Vizzy in your app, see our [main documentation](../README.md)
 
 ## Development Setup
 
 ```bash
 # Clone the repo
-git clone https://github.com/cbarrett3/canopy-charts.git
+git clone https://github.com/cbarrett3/vizzy.git
 
 # Install dependencies
-cd canopy-charts/cli
+cd vizzy/cli
 npm install
 
 # Install test dependencies
@@ -33,29 +33,27 @@ cli/
 │   │   └── constants.ts          # chart registry + dependency list
 │   └── __tests__/                # CLI unit tests
 ├── templates/
-│   └── charts/                   # Light wrappers that import `@canopy/charts`
-│       ├── d3-bar-chart.tsx
-│       ├── d3-line-chart.tsx
-│       └── …
+│   └── charts/
+│       └── index.tsx             # Thin wrappers that import `@vizzy/charts`
 └── dist/                         # Compiled output
 ```
 
 Every generated chart simply re-exports the package:
 
 ```tsx
-import { D3BarChart } from '@canopy/charts';
+import { D3BarChart } from '@vizzy/charts';
 
 export default function BarChart(props) {
   return <D3BarChart {...props} />;
 }
 ```
 
-The CLI automatically installs `@canopy/charts` (alongside `d3`, `tailwindcss`, etc.) so the generated files match the code that ships on the website and in docs.
+The CLI automatically installs `@vizzy/charts` (alongside `d3`, `tailwindcss`, etc.) so the generated files match the code that ships on the website and in docs.
 
 ## Development Workflow
 
 1. **Select an Issue**
-   - Browse [open issues](https://github.com/cbarrett3/canopy-charts/issues)
+   - Browse [open issues](https://github.com/cbarrett3/vizzy/issues)
    - Filter by `good first issue` or `cli` labels
    - Comment to claim an issue
 
@@ -113,8 +111,8 @@ The CLI automatically installs `@canopy/charts` (alongside `d3`, `tailwindcss`, 
 
 ## Support
 
-- [Open an Issue](https://github.com/cbarrett3/canopy-charts/issues)
-- [GitHub Discussions](https://github.com/cbarrett3/canopy-charts/discussions)
+- [Open an Issue](https://github.com/cbarrett3/vizzy/issues)
+- [GitHub Discussions](https://github.com/cbarrett3/vizzy/discussions)
 
 ## Available Scripts
 

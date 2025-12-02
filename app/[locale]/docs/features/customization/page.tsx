@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CodeBlock } from "@/components/ui/code-block";
+import { Tabs, TabsContent, TabsList, TabsTrigger, CodeBlock } from "@/app/(shared)/ui";
 
 export default function CustomizationPage() {
   const [mounted, setMounted] = useState(false);
@@ -47,7 +46,7 @@ export default function CustomizationPage() {
 
         <div className="prose dark:prose-invert max-w-none">
           <p>
-            Canopy Charts offers extensive customization options to ensure your visualizations perfectly match your application's design language.
+            Vizzy offers extensive customization options to ensure your visualizations perfectly match your application's design language.
           </p>
 
           <h2>Theme Customization</h2>

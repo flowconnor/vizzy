@@ -1,15 +1,15 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, type CSSProperties } from "react"
 import { ChevronUp, ChevronDown } from "lucide-react"
-import { ColorSelector } from "@/app/(shared)/charts-ui/color-selector"
-import { VibeSelector } from "@/app/(shared)/charts-ui/vibe-selector"
-import { ChartElements } from "@/app/(shared)/charts-ui/chart-elements"
-import { Button } from "@/components/ui/button"
+import { ColorSelector } from "./color-selector"
+import { VibeSelector } from "./vibe-selector"
+import { ChartElements } from "./chart-elements"
+import { Button } from "@/app/(shared)/ui";
 import clsx from "clsx"
 import { useThemeColor } from '@/app/(shared)/providers/theme-context'
 import { useTranslations } from 'next-intl'
-import type { ChartOptions, ChartStyle } from '@canopy/charts'
+import type { ChartOptions, ChartStyle } from '@vizzy/charts'
 
 type ToggleableOptions = Required<
   Pick<
@@ -109,7 +109,7 @@ export function ChartControls({
                 '--theme-color': currentTheme,
                 '--hover-bg': currentTheme,
                 '--active-bg': `${currentTheme}dd`,
-              } as React.CSSProperties}
+              } as CSSProperties}
             >
               <div className="relative flex items-center justify-between gap-2 py-2 px-3">
                 <div className="flex items-center gap-2">

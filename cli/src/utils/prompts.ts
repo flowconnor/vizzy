@@ -19,7 +19,7 @@ export async function promptForChartConfig(chartName: string) {
       type: 'input',
       name: 'description',
       message: 'Chart description:',
-      default: `A beautiful ${chartName} created with Canopy Charts`
+      default: `A beautiful ${chartName} created with Vizzy`
     },
     {
       type: 'input',

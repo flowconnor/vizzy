@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { D3StreamChart } from '@canopy/charts';
+import { D3StreamChart } from '@vizzy/charts';
 
 const data = Array.from({ length: 12 }, (_, index) => ({
 	date: new Date(2024, index, 1),

@@ -1,5 +1,5 @@
 import React from 'react';
-import { D3BarChart } from '@canopy/charts';
+import { D3BarChart } from '@vizzy/charts';
 
 const data = [
 	{ label: 'Q1', value: 18 },

@@ -4,9 +4,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/app/(shared)/ui";
 import { Copy, Check, Maximize2 } from "lucide-react";
-import { D3BarChart } from "@canopy/charts";
+import { D3BarChart } from "@vizzy/charts";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useTheme } from "next-themes";
@@ -171,7 +171,7 @@ export default function ResponsivenessPage() {
         </div>
 
         <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-6">
-          Canopy Charts are designed to be naturally responsive, automatically adapting to fill their container while maintaining perfect proportions. No media queries needed – just provide the space, and watch your charts shine.
+          Vizzy are designed to be naturally responsive, automatically adapting to fill their container while maintaining perfect proportions. No media queries needed – just provide the space, and watch your charts shine.
         </p>
 
         <div className="space-y-6">
@@ -287,7 +287,7 @@ export default function ResponsivenessPage() {
                   <div className="relative">
                     <CodeSnippetDemo
                       code={`// Create a responsive grid layout with dynamic sizing
-import { D3BarChart } from '@codeium/canopy-charts';
+import { D3BarChart } from '@codeium/vizzy';
 
 function ResponsiveChartGrid() {
   return (

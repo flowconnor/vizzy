@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "title": "Canopy Charts - Biblioteca de Visualización de Datos",
+    "title": "Vizzy - Biblioteca de Visualización de Datos",
     "description": "Una biblioteca de visualización totalmente personalizable y de bajo nivel, impulsada por D3 y estilizada con Tailwind."
   },
   "navigation": {
@@ -20,7 +20,7 @@
     "getStarted": "Comenzar"
   },
   "hero": {
-    "title": "Canopy Charts",
+    "title": "Vizzy",
     "tagline": {
       "part1": "Visualizaciones D3.js",
       "part2": "hermosas e intuitivas",
@@ -41,7 +41,7 @@
     "search": "Buscar documentación...",
     "introduction": {
       "title": "Introducción",
-      "welcome": "Bienvenido a la documentación de Canopy Charts. Esta guía te ayudará a comenzar con nuestra potente biblioteca de visualización que combina la flexibilidad de D3.js con las características modernas de React.",
+      "welcome": "Bienvenido a la documentación de Vizzy. Esta guía te ayudará a comenzar con nuestra potente biblioteca de visualización que combina la flexibilidad de D3.js con las características modernas de React.",
       "features": {
         "title": "Características Principales",
         "ownership": {
@@ -67,7 +67,7 @@
       },
       "philosophy": {
         "title": "Filosofía",
-        "description": "Canopy Charts no es una biblioteca de componentes tradicional. En lugar de instalar una dependencia, copias y pegas los componentes que necesitas. Esto te da control total sobre tus gráficos.",
+        "description": "Vizzy no es una biblioteca de componentes tradicional. En lugar de instalar una dependencia, copias y pegas los componentes que necesitas. Esto te da control total sobre tus gráficos.",
         "why": {
           "title": "¿Por qué este enfoque?",
           "description": "Las bibliotecas de gráficos tradicionales suelen acoplar el estilo con la implementación. Al proporcionar componentes para copiar y pegar:",
@@ -89,12 +89,12 @@
       },
       "installation": {
         "title": "Instalación",
-        "description": "Comienza con Canopy Charts en tu proyecto React."
+        "description": "Comienza con Vizzy en tu proyecto React."
       }
     },
     "installation": {
       "title": "Instalación",
-      "intro": "Comienza con Canopy Charts en minutos. Una biblioteca moderna de gráficos React construida con TypeScript y Tailwind CSS.",
+      "intro": "Comienza con Vizzy en minutos. Una biblioteca moderna de gráficos React construida con TypeScript y Tailwind CSS.",
       "tabs": {
         "npm": "npm",
         "pnpm": "pnpm",
@@ -105,7 +105,7 @@
       "steps": {
         "init": {
           "title": "Crear Proyecto",
-          "description": "Inicializa un nuevo proyecto de Canopy Charts con todas las dependencias preconfiguradas."
+          "description": "Inicializa un nuevo proyecto de Vizzy con todas las dependencias preconfiguradas."
         },
         "add": {
           "title": "Añadir Gráfico",
@@ -116,7 +116,7 @@
         "title": "Comandos CLI",
         "init": {
           "title": "Crear Proyecto",
-          "description": "Inicializa tu proyecto Canopy Charts",
+          "description": "Inicializa tu proyecto Vizzy",
           "features": {
             "structure": "Configura la estructura del proyecto",
             "dependencies": "Instala las dependencias requeridas",
@@ -408,6 +408,54 @@
       "responsiveness": "Responsividad",
       "accessibility": "Accesibilidad"
     },
+    "playground": {
+      "title": "Laboratorio",
+      "examples": "Galería de ejemplos"
+    },
+    "examplesPage": {
+      "title": "Galería de ejemplos",
+      "description": "Previsualiza componentes reales copiados directamente de la carpeta /examples del repositorio. Cada tarjeta renderiza el componente de React en vivo para que veas animaciones, tooltips y opciones de tema antes de copiarlo.",
+      "cta": "Lee la guía de ejemplos",
+      "ctaDescription": "Instrucciones paso a paso para ejecutar cada ejemplo en local.",
+      "ctaButton": "Abrir README",
+      "tags": {
+        "comparison": "Comparación",
+        "composition": "Composición",
+        "timeSeries": "Series temporales",
+        "interaction": "Interacción",
+        "advanced": "Avanzado"
+      },
+      "level": {
+        "basic": "Inicial",
+        "advanced": "Avanzado"
+      },
+      "cards": {
+        "basicBar": {
+          "title": "Gráfico de barras básico",
+          "description": "Comparación minimalista con ejes etiquetados y leyenda opcional."
+        },
+        "donut": {
+          "title": "Composición en dona",
+          "description": "Muestra relaciones parte-del-todo con segmentos animados."
+        },
+        "stacked": {
+          "title": "Barras apiladas",
+          "description": "Destaca composición y totales por categoría con segmentos apilados."
+        },
+        "stream": {
+          "title": "Áreas en flujo",
+          "description": "Anima áreas superpuestas para múltiples series temporales."
+        },
+        "tree": {
+          "title": "Treemap de asignación",
+          "description": "Resume categorías anidadas con rectángulos responsivos."
+        },
+        "interactiveLine": {
+          "title": "Línea interactiva",
+          "description": "Ejemplo avanzado con tooltips, estados de foco y selector de vibra."
+        }
+      }
+    },
     "contributing": {
       "title": "Contribuir",
       "how-to": "Cómo Contribuir",
@@ -415,7 +463,7 @@
     }
   },
   "Index": {
-    "title": "Bienvenido a Canopy Charts"
+    "title": "Bienvenido a Vizzy"
   },
   "ChartUI": {
     "colors": "Colores",

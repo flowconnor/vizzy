@@ -1,6 +1,19 @@
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import path from 'path';
+import { ChartType } from './constants';
+
+const CHARTS_TEMPLATE_DIR = path.join(__dirname, '..', '..', 'templates', 'charts');
+const CHART_INDEX_TEMPLATE = path.join(CHARTS_TEMPLATE_DIR, 'index.tsx');
+
+const CHART_EXPORT_MAP: Record<ChartType, { component: string; props: string }> = {
+    'bar-chart': { component: 'BarChart', props: 'BarChartProps' },
+    'line-chart': { component: 'LineChart', props: 'LineChartProps' },
+    'donut-chart': { component: 'DonutChart', props: 'DonutChartProps' },
+    'stacked-bar-chart': { component: 'StackedBarChart', props: 'StackedBarChartProps' },
+    'stream-chart': { component: 'StreamChart', props: 'StreamChartProps' },
+    'tree-map': { component: 'TreeMap', props: 'TreeMapProps' },
+};
 
 interface Performance {
     renderTime?: string;
@@ -14,7 +27,7 @@ interface DevTools {
 }
 
 interface DashboardStats {
-    installedCharts: string[];
+    installedCharts: ChartType[];
     framework: string;
     typescript: boolean;
     bundleSize: string;
@@ -43,7 +56,7 @@ export class Dashboard {
         };
     }
 
-    async initialize(framework: string, isTypescript: boolean, installedCharts: string[] = [], targetPath: string = 'app/canopy') {
+    async initialize(framework: string, isTypescript: boolean, installedCharts: ChartType[] = [], targetPath: string = 'app/vizzy') {
         this.stats.framework = framework;
         this.stats.typescript = isTypescript;
         this.stats.installedCharts = installedCharts;
@@ -53,6 +66,8 @@ export class Dashboard {
         // Ensure target directory exists
         const targetDir = path.join(this.projectPath, targetPath);
         fs.mkdirSync(targetDir, { recursive: true });
+
+        await this.ensureChartIndexFile(targetDir, true);
 
         // Copy selected chart files and update their imports
         for (const chartName of installedCharts) {
@@ -73,23 +88,32 @@ export class Dashboard {
         this.stats.performance = metrics;
     }
 
-    async addChart(chartName: string, config: { overwrite?: boolean } & Record<string, any>) {
+    async addChart(chartName: ChartType, config: { overwrite?: boolean } & Record<string, any>) {
         if (!config.overwrite && this.stats.installedCharts.includes(chartName)) {
             throw new Error(`Chart '${chartName}' is already installed`);
         }
 
-        const templateFile = path.join(__dirname, '..', '..', 'templates', 'charts', `d3-${chartName}.tsx`);
-        const targetFile = path.join(this.projectPath, this.stats.targetPath, `d3-${chartName}.tsx`);
+        const chartConfig = CHART_EXPORT_MAP[chartName];
 
-        if (!fs.existsSync(templateFile)) {
-            throw new Error(`Chart template '${chartName}' not found at ${templateFile}`);
+        if (!chartConfig) {
+            throw new Error(`Chart template '${chartName}' is not supported`);
         }
+
+        const targetDir = path.join(this.projectPath, this.stats.targetPath);
+        const targetFile = path.join(targetDir, `d3-${chartName}.tsx`);
+
+        await this.ensureChartIndexFile(targetDir, config.overwrite);
 
         // Create target directory if it doesn't exist
         fs.mkdirSync(path.dirname(targetFile), { recursive: true });
 
-        // Copy template as-is
-        await fs.copyFile(templateFile, targetFile);
+        const fileContents = [
+            `export { ${chartConfig.component} as default } from './index';`,
+            `export type { ${chartConfig.props} } from './index';`,
+            '',
+        ].join('\n');
+
+        await fs.writeFile(targetFile, fileContents, { encoding: 'utf-8' });
 
         // Add or update the chart in installedCharts
         if (!this.stats.installedCharts.includes(chartName)) {
@@ -147,5 +171,17 @@ export class Dashboard {
         }
 
         console.log('─'.repeat(50) + '\n');
+    }
+
+    private async ensureChartIndexFile(targetDir: string, overwrite?: boolean) {
+        const targetIndex = path.join(targetDir, 'index.tsx');
+        const shouldCopy = overwrite || !fs.existsSync(targetIndex);
+
+        if (!shouldCopy) {
+            return;
+        }
+
+        fs.mkdirSync(targetDir, { recursive: true });
+        await fs.copyFile(CHART_INDEX_TEMPLATE, targetIndex);
     }
 }

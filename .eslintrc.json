@@ -18,11 +18,11 @@
         "paths": [
           {
             "name": "@/app/_components/charts",
-            "message": "Charts now live in @canopy/charts."
+            "message": "Charts now live in @vizzy/charts."
           },
           {
             "name": "@/app/_components/charts/*",
-            "message": "Import from @canopy/charts instead of the removed in-app copies."
+            "message": "Import from @vizzy/charts instead of the removed in-app copies."
           }
         ]
       }

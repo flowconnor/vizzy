@@ -3,8 +3,8 @@
 import { useState } from "react"
 import { Globe, TreesIcon as Tree, Wand2, PlugIcon as Plugin, Wrench, Triangle } from "lucide-react"
 import Link from "next/link"
-import { ColorSelector } from "@/app/(shared)/charts-ui/color-selector"
-import { VibeSelector } from "@/app/(shared)/charts-ui/vibe-selector"
+import { ColorSelector } from "@/app/(shared)/charts-ui"
+import { VibeSelector } from "@/app/(shared)/charts-ui"
 import {
   D3TreeMap as TreeMap,
   D3BarChart as BarChart,
@@ -13,22 +13,18 @@ import {
   D3StackedBarChart as StackedBarChart,
   D3DonutChart as DonutChart,
   ChartStyle
-} from "@canopy/charts"
-import { AiChartSuggest } from "@/app/(shared)/charts-ui/ai-chart-suggest"
-import { ChartControls } from "@/app/(shared)/charts-ui/chart-controls"
-import { Input } from "@/components/ui/input"
-import { Slider } from "@/components/ui/slider"
+} from "@vizzy/charts"
+import { AiChartSuggest } from "@/app/(shared)/charts-ui"
+import { ChartControls } from "@/app/(shared)/charts-ui"
+import { Input, Slider, Switch, Label, Button } from "@/app/(shared)/ui";
 import { Command } from 'lucide-react'
 import * as d3 from 'd3'
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
 import { useThemeColor } from "@/app/(shared)/providers/theme-context"
 import React from 'react';
 import { useParams } from 'next/navigation'
 import { ChevronRight } from 'lucide-react';
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
 
 type Feature = {
    title: string;

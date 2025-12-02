@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-   title: 'Canopy Charts',
+   title: 'Vizzy',
    description: 'Beautiful, customizable D3 charts for React',
    icons: {
       icon: '/favicon.svg',

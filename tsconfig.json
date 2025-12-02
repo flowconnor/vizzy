@@ -19,8 +19,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@canopy/charts": ["_new/packages/charts/src"],
-      "@canopy/charts/*": ["_new/packages/charts/src/*"]
+      "@vizzy/charts": ["_new/packages/charts/src"],
+      "@vizzy/charts/*": ["_new/packages/charts/src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,18 +1,10 @@
 'use client'
 
 import { useState } from "react"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
-import { Slider } from "@/components/ui/slider"
+import { Label, Switch, Slider, Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/app/(shared)/ui";
 import { useThemeColor } from '@/app/(shared)/providers/theme-context'
 import { useTranslations } from 'next-intl'
 import { Settings2, Type, Grid, Info, Axis3d, TextCursor } from 'lucide-react'
-import {
-   Tooltip,
-   TooltipContent,
-   TooltipTrigger,
-   TooltipProvider
-} from "@/components/ui/tooltip"
 import clsx from 'clsx'
 
 interface BarChartElementsProps {

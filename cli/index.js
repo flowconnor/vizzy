@@ -11,11 +11,11 @@ const { SUPPORTED_VERSIONS, getVersionWarning } = require('./utils/versions');
 const Dashboard = require('./utils/dashboard');
 
 const separator = chalk.hex('#34D399')('·'.repeat(50));
-const CANOPY_SOURCE = path.join(__dirname, '..', 'app', '_components');
+const VIZZY_SOURCE = path.join(__dirname, '..', 'app', '_components');
 
 async function init() {
   console.clear();
-  console.log(chalk.hex('#34D399').bold('Canopy Charts'));
+  console.log(chalk.hex('#34D399').bold('Vizzy'));
   console.log(chalk.gray('Beautiful D3 charts for modern web apps\n'));
 
   // Step 1: Project Analysis & Validation
@@ -164,7 +164,7 @@ async function init() {
           {
             title: chalk.hex('#34D399')('Default location'),
             description: chalk.gray('(Recommended based on your project structure)'),
-            value: path.join(depResults.defaultDir, 'canopy')
+            value: path.join(depResults.defaultDir, 'vizzy')
           },
           {
             title: chalk.hex('#34D399')('Custom location'),
@@ -177,8 +177,8 @@ async function init() {
         type: prev => prev.directoryChoice === 'custom' ? 'text' : null,
         name: 'customDirectory',
         message: chalk.white('Enter custom directory path:'),
-        initial: path.join(depResults.defaultDir, 'canopy'),
-        hint: chalk.gray('e.g., src/components/canopy'),
+        initial: path.join(depResults.defaultDir, 'vizzy'),
+        hint: chalk.gray('e.g., src/components/vizzy'),
         validate: value => {
           if (!value) return 'Directory path is required';
           if (value.includes('..')) return 'Please use a path within your project';
@@ -238,7 +238,7 @@ async function init() {
     console.log(chalk.white.bold('Step 5: Installation'));
     console.log(chalk.gray('Installing your selected charts...\n'));
 
-    // Create canopy directory structure
+    // Create vizzy directory structure
     const dirs = [
       targetDir,
       path.join(targetDir, 'charts'),
@@ -277,11 +277,11 @@ async function init() {
     dashboard.render();
 
     console.log(chalk.gray('\nNeed help getting started?'));
-    console.log(`• Documentation: ${chalk.white('canopy-charts.dev/docs')}`);
-    console.log(`• Examples: ${chalk.white('canopy-charts.dev/examples')}`);
-    console.log(`• GitHub: ${chalk.white('github.com/cbarrett3/canopy-charts')}`);
+    console.log(`• Documentation: ${chalk.white('vizzy.dev/docs')}`);
+    console.log(`• Examples: ${chalk.white('vizzy.dev/examples')}`);
+    console.log(`• GitHub: ${chalk.white('github.com/cbarrett3/vizzy')}`);
     
-    console.log(chalk.hex('#34D399')('\nWelcome to the canopy 🦊'));
+    console.log(chalk.hex('#34D399')('\nWelcome to the vizzy 🦊'));
   } catch (error) {
     spinner.fail('Project analysis failed');
     console.error(chalk.red(`\nError: ${error.message}`));
@@ -301,7 +301,7 @@ async function copyChartFiles(chartType, targetDir, isTypescript) {
   }).start();
 
   // Copy chart component
-  const chartSource = path.join(CANOPY_SOURCE, 'charts', `d3-${chartType}-chart.tsx`);
+  const chartSource = path.join(VIZZY_SOURCE, 'charts', `d3-${chartType}-chart.tsx`);
   const chartTarget = path.join(targetDir, 'charts', `d3-${chartType}-chart.${isTypescript ? 'tsx' : 'jsx'}`);
   
   if (fs.existsSync(chartSource)) {
@@ -309,7 +309,7 @@ async function copyChartFiles(chartType, targetDir, isTypescript) {
   }
 
   // Copy chart-specific hooks if they exist
-  const hookSource = path.join(CANOPY_SOURCE, 'charts', 'hooks', `use-${chartType}-chart.ts`);
+  const hookSource = path.join(VIZZY_SOURCE, 'charts', 'hooks', `use-${chartType}-chart.ts`);
   const hookTarget = path.join(targetDir, 'hooks', `use-${chartType}-chart.ts`);
   
   if (fs.existsSync(hookSource)) {
@@ -329,19 +329,19 @@ async function copyCommonFiles(targetDir, isTypescript) {
   
   // Copy helpers (axis, grid, tooltip)
   const helperFiles = ['axis', 'grid', 'tooltip'].map(helper => ({
-    source: path.join(CANOPY_SOURCE, 'charts', 'components', `${helper}${ext}`),
+    source: path.join(VIZZY_SOURCE, 'charts', 'components', `${helper}${ext}`),
     target: path.join(targetDir, 'helpers', `${helper}${ext}`)
   }));
 
   // Copy hooks
   const hookFiles = ['dimensions', 'colors'].map(hook => ({
-    source: path.join(CANOPY_SOURCE, 'charts', 'hooks', `use-${hook}.ts`),
+    source: path.join(VIZZY_SOURCE, 'charts', 'hooks', `use-${hook}.ts`),
     target: path.join(targetDir, 'hooks', `use-${hook}.ts`)
   }));
 
   // Copy utils
   const utilFiles = ['colors'].map(util => ({
-    source: path.join(CANOPY_SOURCE, 'charts', 'utils', `${util}.ts`),
+    source: path.join(VIZZY_SOURCE, 'charts', 'utils', `${util}.ts`),
     target: path.join(targetDir, 'utils', `${util}.ts`)
   }));
 

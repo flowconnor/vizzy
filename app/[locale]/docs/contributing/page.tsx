@@ -69,7 +69,7 @@ export default function ContributingPage() {
         </div>
 
         <p className="text-slate-600 dark:text-slate-400 mb-8">
-          We welcome contributions from the community! Here's how you can help make Canopy Charts even better.
+          We welcome contributions from the community! Here's how you can help make Vizzy even better.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -113,7 +113,7 @@ export default function ContributingPage() {
               <h3 className="font-medium">Thank You!</h3>
             </div>
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              We&apos;re excited to have you contribute to Canopy Charts!
+              We&apos;re excited to have you contribute to Vizzy!
             </p>
           </div>
         </div>

@@ -34,13 +34,13 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
           {/* Main Info */}
           <div className="col-span-1 lg:col-span-2">
-            <h3 className="text-lg font-semibold text-foreground">Canopy Charts</h3>
+            <h3 className="text-lg font-semibold text-foreground">Vizzy</h3>
             <p className="mt-2 text-sm text-muted-foreground max-w-md">
               Fully customizable, low-level visualizations. Powered by D3, styled with Tailwind, nothing more.
             </p>
             <div className="mt-4 flex space-x-4">
               <Link 
-                href="https://github.com/cbarrett3/canopy-charts" 
+                href="https://github.com/cbarrett3/vizzy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-md hover:bg-muted transition-colors"
@@ -49,7 +49,7 @@ export function Footer() {
                 <span className="sr-only">GitHub</span>
               </Link>
               <Link 
-                href="https://twitter.com/canopycharts" 
+                href="https://twitter.com/vizzy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-md hover:bg-muted transition-colors"
@@ -58,7 +58,7 @@ export function Footer() {
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link 
-                href="https://www.npmjs.com/package/canopy-charts" 
+                href="https://www.npmjs.com/package/vizzy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-md hover:bg-muted transition-colors"
@@ -102,7 +102,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <Link 
-                  href="https://github.com/cbarrett3/canopy-charts" 
+                  href="https://github.com/cbarrett3/vizzy" 
                   className="text-muted-foreground hover:text-green-500 transition-colors"
                 >
                   GitHub
@@ -110,7 +110,7 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="https://twitter.com/canopycharts" 
+                  href="https://twitter.com/vizzy" 
                   className="text-muted-foreground hover:text-green-500 transition-colors"
                 >
                   Twitter
@@ -131,7 +131,7 @@ export function Footer() {
         <div className="mt-12 border-t border-border/40 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground">
-              {new Date().getFullYear()} Canopy Charts. Released under the MIT License.
+              {new Date().getFullYear()} Vizzy. Released under the MIT License.
             </p>
             <div className="flex items-center space-x-4 text-sm text-muted-foreground">
               <Link href="/privacy" className="hover:text-foreground transition-colors">

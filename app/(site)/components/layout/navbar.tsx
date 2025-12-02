@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/app/(shared)/ui";
 import { Logo } from "@/app/(shared)/ui/logo"
 import { ThemeToggle } from "@/app/(shared)/ui/theme-toggle"
 import LanguageSelector from "@/app/(shared)/ui/language-selector"
@@ -189,7 +189,7 @@ export function Navbar() {
                       '--hover-color': themeColor
                     } as React.CSSProperties}
                   >
-                    Canopy Charts
+                    Vizzy
                   </span>
                 </Link>
               </motion.div>
@@ -221,7 +221,7 @@ export function Navbar() {
                     asChild
                     className="relative hover:bg-transparent group"
                   >
-                    <Link href="https://github.com/cbarrett3/canopy-charts">
+                    <Link href="https://github.com/cbarrett3/vizzy">
                       <div 
                         className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-300 blur-lg" 
                         style={{ backgroundColor: themeColor }}

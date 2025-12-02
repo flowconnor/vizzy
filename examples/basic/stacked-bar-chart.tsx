@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { D3StackedBarChart } from '@canopy/charts';
+import { D3StackedBarChart } from '@vizzy/charts';
 
 const data = [
 	{ category: 'Q1', newUsers: 12, returningUsers: 18 },

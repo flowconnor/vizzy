@@ -1,5 +1,5 @@
 import React from 'react';
-import { D3LineChart } from '@canopy/charts';
+import { D3LineChart } from '@vizzy/charts';
 
 const data = [
 	{ name: 'Week 1', newUsers: 120, returning: 80 },

@@ -1,4 +1,4 @@
-# Canopy Charts
+# Vizzy
 
 A world-class, extensible charting library built with D3.js and React. Designed for modern web applications with a focus on performance, accessibility, and developer experience.
 
@@ -17,9 +17,9 @@ A world-class, extensible charting library built with D3.js and React. Designed 
 ## Installation
 
 ```bash
-npm install @canopy/charts
+npm install @vizzy/charts
 # or
-yarn add @canopy/charts
+yarn add @vizzy/charts
 ```
 
 ## Quick Start
@@ -30,7 +30,7 @@ import {
 	D3LineChart,
 	ChartStyle,
 	ChartOptions
-} from '@canopy/charts';
+} from '@vizzy/charts';
 
 const sampleBarData = [
 	{ label: 'North', value: 18 },
@@ -156,4 +156,4 @@ The library supports all modern browsers including:
 
 ## License
 
-MIT © Canopy
+MIT © Vizzy

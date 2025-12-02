@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
-import { D3LineChart } from '@canopy/charts';
+import { D3LineChart } from '@vizzy/charts';
 
 const lineData = [
 	{ name: 'Jan', primary: 12, secondary: 20 },

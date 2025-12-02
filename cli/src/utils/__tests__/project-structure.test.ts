@@ -24,10 +24,10 @@ describe("detectProjectStructure", () => {
     const choices = await detectProjectStructure("/project");
     const values = choices.map((choice) => choice.value);
 
-    expect(values).toContain("app/canopy");
-    expect(values).toContain("app/components/canopy");
-    expect(values).toContain("components/canopy");
-    expect(values).toContain("src/canopy");
+    expect(values).toContain("app/vizzy");
+    expect(values).toContain("app/components/vizzy");
+    expect(values).toContain("components/vizzy");
+    expect(values).toContain("src/vizzy");
     expect(values).toContain("custom");
   });
 
