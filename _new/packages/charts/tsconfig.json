@@ -12,13 +12,16 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "react",
+		"types": ["node", "jest", "@testing-library/jest-dom"],
 		"incremental": true,
 		"declaration": true,
 		"sourceMap": true,
 		"outDir": "dist",
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"@canopy/charts": ["./src"],
+			"@canopy/charts/*": ["./src/*"]
 		}
 	},
 	"include": ["src/**/*"],

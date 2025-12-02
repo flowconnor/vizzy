@@ -11,6 +11,21 @@
       {
         "enableDangerousAutofixThisMayCauseInfiniteLoops": true
       }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@/app/_components/charts",
+            "message": "Charts now live in @canopy/charts."
+          },
+          {
+            "name": "@/app/_components/charts/*",
+            "message": "Import from @canopy/charts instead of the removed in-app copies."
+          }
+        ]
+      }
     ]
   }
 }

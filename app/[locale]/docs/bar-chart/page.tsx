@@ -3,14 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Copy, Check } from "lucide-react";
-import D3BarChart from '@/app/_components/charts/d3-bar-chart';
-import { ChartControls } from "@/app/_components/charts-ui/chart-controls";
-import { useThemeColor } from "@/app/_components/providers/theme-context";
+import { D3BarChart, ChartStyle } from '@canopy/charts';
+import { ChartControls } from "@/app/(shared)/charts-ui/chart-controls";
+import { useThemeColor } from "@/app/(shared)/providers/theme-context";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { ChartStyle } from '@/app/_components/charts/types';
 
 export default function BarChartPage() {
   const t = useTranslations('Docs.visualizations.barChart');

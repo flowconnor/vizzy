@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 import { Copy, Check, Maximize2 } from "lucide-react";
-import D3BarChart from "@/app/_components/charts/d3-bar-chart";
+import { D3BarChart } from "@canopy/charts";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useTheme } from "next-themes";

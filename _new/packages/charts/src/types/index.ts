@@ -2,12 +2,16 @@
  * Available visual styles for charts
  */
 export type ChartStyle =
-	| 'rainforest' // organic, lush feel with gentle swaying
-	| 'savanna' // warm, expansive with radiant movements
-	| 'tundra' // crisp, cool with crystalline transitions
-	| 'coral' // fluid, flowing with wave-like motions
-	| 'volcanic' // intense, dynamic with rising effects
-	| 'dunes'; // smooth, windswept with drifting animations
+	| 'evergreen'
+	| 'rainforest'
+	| 'ocean'
+	| 'sunset'
+	| 'midnight'
+	| 'savanna'
+	| 'tundra'
+	| 'coral'
+	| 'volcanic'
+	| 'dunes';
 
 /**
  * Common chart dimensions configuration
@@ -57,8 +61,15 @@ export interface ChartOptions {
 	labelSize?: number;
 	showTitle?: boolean;
 	showLegend?: boolean;
+	legendPosition?: 'left' | 'right';
 	showTooltips?: boolean;
 	title?: string;
+	xAxisLabel?: string;
+	yAxisLabel?: string;
+	enableZoom?: boolean;
+	enablePan?: boolean;
+	gridStyle?: 'solid' | 'dashed';
+	gridOpacity?: number;
 }
 
 export interface WithThemeColor {

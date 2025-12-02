@@ -1,20 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { BarChart } from '../../../_new/packages/charts/src/components/bar-chart'
-import { LineChart } from '../../../_new/packages/charts/src/components/line-chart'
-import { BarChartElements } from '@/app/_components/charts-ui/bar-chart-elements'
-import type { ChartStyle } from '../../../_new/packages/charts/src/types'
+import { D3BarChart, D3LineChart, ChartStyle } from '@canopy/charts'
+import { BarChartElements } from '@/app/(shared)/charts-ui/bar-chart-elements'
 
 // shared chart dimensions
 const CHART_HEIGHT = 400;
-const CHART_MARGIN = {
-   top: 45,
-   right: 20,
-   bottom: 40,
-   left: 40
-};
-
 export default function TestPage() {
    const [themeColor, setThemeColor] = useState('#22C55E')
    const [currentVibe, setCurrentVibe] = useState<ChartStyle>('rainforest')
@@ -43,25 +34,6 @@ export default function TestPage() {
       { name: 'Jun', sales: 50, revenue: 70, profit: 35 }
    ];
 
-   const sharedConfig = {
-      showXAxis: showAxes,
-      showYAxis: showAxes,
-      showXGrid: showGrid,
-      showYGrid: showGrid,
-      showAxisLabels: showLabels,
-      labelSize,
-      showLegend,
-      legendPosition: 'right' as const,
-      showTooltip: showTooltips,
-      gridStyle: 'dashed' as const,
-      gridOpacity: 0.1,
-      axisOpacity: 0.7,
-      marginTop: CHART_MARGIN.top,
-      marginRight: CHART_MARGIN.right + (showLegend ? 120 : 0),
-      marginBottom: CHART_MARGIN.bottom,
-      marginLeft: CHART_MARGIN.left,
-   };
-
    return (
       <main className="min-h-screen p-8 text-white">
          <h1 className="text-2xl font-bold mb-6">Chart Tests</h1>
@@ -71,14 +43,17 @@ export default function TestPage() {
             {/* Bar Chart */}
             <div>
                <div className="w-full" style={{ height: CHART_HEIGHT }}>
-                  <BarChart
+                  <D3BarChart
                      data={barData}
                      themeColor={themeColor}
                      vibe={currentVibe}
-                     config={{
-                        ...sharedConfig,
-                        chartTitle: showTitle ? 'MONTHLY DISTRIBUTION' : undefined,
-                     }}
+                     showAxes={showAxes}
+                     showGrid={showGrid}
+                     showLabels={showLabels}
+                     labelSize={labelSize}
+                     showLegend={showLegend}
+                     showTooltips={showTooltips}
+                     showTitle={showTitle}
                   />
                </div>
             </div>
@@ -86,22 +61,18 @@ export default function TestPage() {
             {/* Line Chart */}
             <div>
                <div className="w-full" style={{ height: CHART_HEIGHT }}>
-                  <LineChart
+                  <D3LineChart
                      data={lineData}
                      datasets={['sales', 'revenue', 'profit']}
                      themeColor={themeColor}
                      vibe={currentVibe}
-                     config={{
-                        ...sharedConfig,
-                        chartTitle: showTitle ? 'PERFORMANCE METRICS' : undefined,
-                        // line specific
-                        lineWidth: 2,
-                        lineCurve: 'cardinal',
-                        showPoints: true,
-                        pointSize: 4,
-                        enableZoom: false,
-                        enablePan: false
-                     }}
+                     showAxes={showAxes}
+                     showGrid={showGrid}
+                     showLabels={showLabels}
+                     labelSize={labelSize}
+                     showLegend={showLegend}
+                     showTooltips={showTooltips}
+                     showTitle={showTitle}
                   />
                </div>
             </div>

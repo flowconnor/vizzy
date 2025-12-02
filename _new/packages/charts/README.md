@@ -25,92 +25,68 @@ yarn add @canopy/charts
 ## Quick Start
 
 ```tsx
-import { BarChart, LineChart } from '@canopy/charts';
+import {
+	D3BarChart,
+	D3LineChart,
+	ChartStyle,
+	ChartOptions
+} from '@canopy/charts';
 
-// Bar Chart Example
-const MyBarChart = () => (
-	<BarChart
-		data={[
-			{ label: 'A', value: 30 },
-			{ label: 'B', value: 45 },
-			{ label: 'C', value: 25 },
-			{ label: 'D', value: 60 },
-			{ label: 'E', value: 35 },
-		]}
-		themeColor='#3b82f6'
-		vibe='coral'
-		config={{
-			chartTitle: 'Monthly Distribution',
-			showLegend: true,
-			enableZoom: true,
-		}}
-	/>
-);
+const sampleBarData = [
+	{ label: 'North', value: 18 },
+	{ label: 'South', value: 22 },
+	{ label: 'East', value: 30 },
+	{ label: 'West', value: 26 },
+];
 
-// Line Chart Example
-const MyLineChart = () => (
-	<LineChart
-		data={[
-			{ name: 'Jan', value: 30, secondary: 20 },
-			{ name: 'Feb', value: 45, secondary: 30 },
-			{ name: 'Mar', value: 25, secondary: 40 },
-			{ name: 'Apr', value: 60, secondary: 35 },
-			{ name: 'May', value: 35, secondary: 50 },
-			{ name: 'Jun', value: 50, secondary: 45 },
-		]}
-		datasets={['value', 'secondary']}
-		themeColor='#10b981'
-		vibe='rainforest'
-		config={{
-			chartTitle: 'Performance Metrics',
-			showPoints: true,
-			lineCurve: 'cardinal',
-			enableZoom: true,
-		}}
-	/>
-);
+export function BarExample() {
+	return (
+		<D3BarChart
+			data={sampleBarData}
+			showLegend
+			showTitle
+			title="Regional Revenue"
+			themeColor="#22C55E"
+			vibe={'rainforest' satisfies ChartStyle}
+		/>
+	);
+}
+
+const sampleLineData = [
+	{ name: 'Jan', primary: 24, secondary: 14 },
+	{ name: 'Feb', primary: 30, secondary: 18 },
+	{ name: 'Mar', primary: 42, secondary: 21 },
+];
+
+export function LineExample() {
+	return (
+		<D3LineChart
+			data={sampleLineData}
+			datasets={['primary', 'secondary']}
+			showLegend
+			showTooltips
+			themeColor="#0EA5E9"
+			title="Monthly Sessions"
+			showTitle
+		/>
+	);
+}
 ```
 
 ## Chart Types
 
-### Bar Chart
+Each D3 component accepts `ChartOptions` (axes, grid, tooltip, legend, title, vibes) plus chart-specific props:
 
-The `BarChart` component displays categorical data with rectangular bars.
+| Component              | Required props                     | Notes                                                            |
+| ---------------------- | ---------------------------------- | ---------------------------------------------------------------- |
+| `D3BarChart`           | `data: { label: string; value }[]` | `showLegend`, `showTitle`, `themeColor`, `vibe`                  |
+| `D3LineChart`          | `data`, `datasets: string[]`       | Supports multiple series; `showPoints`, `lineCurve`, `title`     |
+| `D3DonutChart`         | `data: { label: string; value }[]` | Legend + tooltip position automatically; `themeColor` as accent  |
+| `D3StackedBarChart`    | `data: Record<string, number>`     | Accepts multiple keys per row; legend lists each dataset         |
+| `D3StreamChart`        | `data: { date: Date; series… }[]`  | Uses streamgraph layout; `themeColor` sets the palette seed      |
+| `D3TreeMap`            | `data: { name; value; children? }` | Displays hierarchies; `showLegend`, `showTooltips`, `vibe`       |
 
-```tsx
-<BarChart
-	data={[
-		{ label: 'A', value: 30 },
-		{ label: 'B', value: 45 },
-		{ label: 'C', value: 25 },
-	]}
-	themeColor='#3b82f6'
-	config={{
-		chartTitle: 'Sample Distribution',
-		showLegend: true,
-	}}
-/>
-```
-
-### Line Chart
-
-The `LineChart` component displays data as a series of points connected by straight line segments.
-
-```tsx
-<LineChart
-	data={[
-		{ name: 'Jan', value: 30, secondary: 20 },
-		{ name: 'Feb', value: 45, secondary: 30 },
-		{ name: 'Mar', value: 25, secondary: 40 },
-	]}
-	datasets={['value', 'secondary']}
-	themeColor='#10b981'
-	config={{
-		chartTitle: 'Performance Metrics',
-		showPoints: true,
-	}}
-/>
-```
+Each chart ships fully typed so you can hover-autocomplete props in TypeScript or copy/paste the examples above as a starting point.
 
 ## Configuration
 

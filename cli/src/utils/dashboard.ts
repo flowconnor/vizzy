@@ -50,38 +50,9 @@ export class Dashboard {
         this.stats.bundleSize = this.calculateBundleSize(installedCharts);
         this.stats.targetPath = targetPath;
 
-        // Create target directory structure
+        // Ensure target directory exists
         const targetDir = path.join(this.projectPath, targetPath);
-        const utilsDir = path.join(targetDir, 'utils');
-        const hooksDir = path.join(targetDir, 'hooks');
-        const typesDir = path.join(targetDir, 'types');
         fs.mkdirSync(targetDir, { recursive: true });
-        fs.mkdirSync(utilsDir, { recursive: true });
-        fs.mkdirSync(hooksDir, { recursive: true });
-        fs.mkdirSync(typesDir, { recursive: true });
-
-        // Copy utils (colors.ts)
-        const sourceUtilsDir = path.join(__dirname, '..', '..', 'templates', '_components', 'charts', 'utils');
-        await fs.copy(sourceUtilsDir, utilsDir);
-
-        // Copy hooks
-        const sourceHooksDir = path.join(__dirname, '..', '..', 'templates', '_components', 'charts', 'hooks');
-        await fs.copy(sourceHooksDir, hooksDir);
-
-        // Copy types
-        const sourceTypesDir = path.join(__dirname, '..', '..', 'templates', '_components', 'charts', 'types');
-        await fs.copy(sourceTypesDir, typesDir);
-
-        // Copy chart components to utils
-        const sourceComponentsDir = path.join(__dirname, '..', '..', 'templates', '_components', 'charts', 'components');
-        const components = ['chart-axis', 'chart-grid', 'chart-tooltip', 'chart-lines'];
-        for (const component of components) {
-            const sourceFile = path.join(sourceComponentsDir, `${component}.tsx`);
-            const targetFile = path.join(utilsDir, `${component}.tsx`);
-            if (fs.existsSync(sourceFile)) {
-                await fs.copy(sourceFile, targetFile);
-            }
-        }
 
         // Copy selected chart files and update their imports
         for (const chartName of installedCharts) {
@@ -107,62 +78,18 @@ export class Dashboard {
             throw new Error(`Chart '${chartName}' is already installed`);
         }
 
-        const templateFile = path.join(__dirname, '..', '..', 'templates', '_components', 'charts', `d3-${chartName}.tsx`);
+        const templateFile = path.join(__dirname, '..', '..', 'templates', 'charts', `d3-${chartName}.tsx`);
         const targetFile = path.join(this.projectPath, this.stats.targetPath, `d3-${chartName}.tsx`);
 
         if (!fs.existsSync(templateFile)) {
             throw new Error(`Chart template '${chartName}' not found at ${templateFile}`);
         }
 
-        // Read the template file
-        let content = await fs.readFile(templateFile, 'utf8');
-
-        // Update imports to point to correct locations
-        content = content
-            // Fix utils/colors path
-            .replace(
-                /@\/app\/_components\/charts\/utils\/colors/g,
-                './utils/colors'
-            )
-            // Fix types imports
-            .replace(
-                /from ['"]\.\/types['"]/g,
-                'from \'./types/index\''
-            )
-            .replace(
-                /from ['"]\.\/types\//g,
-                'from \'./types/'
-            )
-            // Fix hooks imports
-            .replace(
-                /from ['"]\.\/hooks\/use-/g,
-                'from \'./hooks/use-'
-            )
-            // Fix utils/use-* imports
-            .replace(
-                /from ['"]\.\/utils\/use-/g,
-                'from \'./hooks/use-'
-            )
-            // Fix chart components imports
-            .replace(
-                /from ['"]\.\/components\/chart-([^'"]+)['"]/g,
-                'from \'./utils/chart-$1\''
-            )
-            // Fix any remaining paths
-            .replace(
-                /from ['"]\.\/utils\//g,
-                'from \'./utils/'
-            )
-            .replace(
-                /from ['"]\.\/hooks\//g,
-                'from \'./hooks/'
-            );
-
         // Create target directory if it doesn't exist
         fs.mkdirSync(path.dirname(targetFile), { recursive: true });
 
-        // Write the modified content
-        await fs.writeFile(targetFile, content);
+        // Copy template as-is
+        await fs.copyFile(templateFile, targetFile);
 
         // Add or update the chart in installedCharts
         if (!this.stats.installedCharts.includes(chartName)) {

@@ -27,16 +27,30 @@ npm test
 ```
 cli/
 ├── src/
-│   ├── commands/     # CLI commands (init, add, etc.)
-│   │   ├── init.ts   # Project initialization
-│   │   └── add.ts    # Add chart components
-│   ├── utils/        # Shared utilities
-│   │   ├── framework-validator.ts
-│   │   └── template-manager.ts
-│   └── test/         # Test helpers
-├── __tests__/        # Test files
-└── dist/            # Compiled output
+│   ├── commands/                 # init / add commands
+│   ├── utils/                    # framework detection + project scaffolding
+│   │   ├── project-structure.ts  # figures out app/src/components destinations
+│   │   └── constants.ts          # chart registry + dependency list
+│   └── __tests__/                # CLI unit tests
+├── templates/
+│   └── charts/                   # Light wrappers that import `@canopy/charts`
+│       ├── d3-bar-chart.tsx
+│       ├── d3-line-chart.tsx
+│       └── …
+└── dist/                         # Compiled output
 ```
+
+Every generated chart simply re-exports the package:
+
+```tsx
+import { D3BarChart } from '@canopy/charts';
+
+export default function BarChart(props) {
+  return <D3BarChart {...props} />;
+}
+```
+
+The CLI automatically installs `@canopy/charts` (alongside `d3`, `tailwindcss`, etc.) so the generated files match the code that ships on the website and in docs.
 
 ## Development Workflow
 

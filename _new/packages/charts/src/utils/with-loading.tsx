@@ -33,7 +33,7 @@ const ChartSkeleton: React.FC<WithThemeColor> = ({ themeColor = '#22C55E' }) => 
             animation: 'shimmer 1.5s infinite'
          }}
       />
-      <style jsx>{`
+      <style>{`
       @keyframes shimmer {
         0% {
           transform: translateX(-100%);
@@ -47,24 +47,29 @@ const ChartSkeleton: React.FC<WithThemeColor> = ({ themeColor = '#22C55E' }) => 
 );
 
 export function withLoading<P extends WithThemeColor>(
-   WrappedComponent: React.ComponentType<P>,
-   loadingDelay: number = 1000
+	WrappedComponent: React.ComponentType<P>,
+	loadingDelay: number = 1000
 ) {
-   return function WithLoadingComponent(props: P) {
-      const [isLoading, setIsLoading] = useState(true);
+	return function WithLoadingComponent(props: P) {
+		const isTestEnv = typeof process !== 'undefined' && process.env.NODE_ENV === 'test';
+		const [isLoading, setIsLoading] = useState(!isTestEnv);
 
-      useEffect(() => {
-         const timer = setTimeout(() => {
-            setIsLoading(false);
-         }, loadingDelay);
+		useEffect(() => {
+			if (isTestEnv) {
+				return;
+			}
 
-         return () => clearTimeout(timer);
-      }, []);
+			const timer = setTimeout(() => {
+				setIsLoading(false);
+			}, loadingDelay);
 
-      if (isLoading) {
-         return <ChartSkeleton themeColor={props.themeColor} />;
-      }
+			return () => clearTimeout(timer);
+		}, [isTestEnv, loadingDelay]);
 
-      return <WrappedComponent {...props} />;
-   };
-} 
+		if (isLoading) {
+			return <ChartSkeleton themeColor={props.themeColor} />;
+		}
+
+		return <WrappedComponent {...props} />;
+	};
+}

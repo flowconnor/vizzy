@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useSidebar } from '@/app/_components/layout/sidebar-context';
+import { useSidebar } from '@/app/(site)/components/layout/sidebar-context';
 import { Search, Menu, X, ChevronRight, PanelLeftClose, PanelLeft, ChevronUp, ChevronDown } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 import { useParams } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { Logo } from '@/app/_components/ui/logo';
+import { Logo } from '@/app/(shared)/ui/logo';
 
 export default function DocsLayout({
   children,

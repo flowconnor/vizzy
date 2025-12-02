@@ -6,8 +6,8 @@ import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 import { TreePine, SunMedium, Snowflake, Waves, Flame, Wind, Play, Pause } from "lucide-react";
-import { useThemeColor } from '@/app/_components/providers/theme-context';
-import D3BarChart from '@/app/_components/charts/d3-bar-chart';
+import { useThemeColor } from '@/app/(shared)/providers/theme-context';
+import { D3BarChart } from '@canopy/charts';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 

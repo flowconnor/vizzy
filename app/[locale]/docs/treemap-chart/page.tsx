@@ -3,11 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Copy, Check, ChevronRight } from "lucide-react";
-import D3TreeMap, { VibeType } from '@/app/_components/charts/d3-tree-map';
-import { ChartStyle } from '@/app/_components/charts/types';
-import D3LineChart from '@/app/_components/charts/d3-line-chart';
-import { ChartControls } from "@/app/_components/charts-ui/chart-controls";
-import { useThemeColor } from "@/app/_components/providers/theme-context";
+import { D3TreeMap, D3LineChart, ChartStyle, VibeType } from '@canopy/charts';
+import { ChartControls } from "@/app/(shared)/charts-ui/chart-controls";
+import { useThemeColor } from "@/app/(shared)/providers/theme-context";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

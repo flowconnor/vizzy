@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Copy, Check, ChevronRight } from "lucide-react";
-import D3StackedBarChart from '@/app/_components/charts/d3-stacked-bar-chart';
-import D3LineChart from '@/app/_components/charts/d3-line-chart';
-import { ChartControls } from "@/app/_components/charts-ui/chart-controls";
-import { useThemeColor } from "@/app/_components/providers/theme-context";
+import { D3StackedBarChart, D3LineChart, ChartStyle } from '@canopy/charts';
+import { ChartControls } from "@/app/(shared)/charts-ui/chart-controls";
+import { useThemeColor } from "@/app/(shared)/providers/theme-context";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -14,7 +13,6 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { ChartStyle } from '@/app/_components/charts/types';
 
 export default function StackedBarChartPage() {
   const t = useTranslations('Docs.visualizations.stackedBarChart');

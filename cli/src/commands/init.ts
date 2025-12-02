@@ -7,60 +7,7 @@ import { FrameworkValidator, satisfiesVersion } from "../utils/framework-validat
 import { Dashboard } from "../utils/dashboard";
 import { CHART_REGISTRY, REQUIRED_DEPENDENCIES } from "../utils/constants";
 import { execSync } from "child_process";
-
-async function detectProjectStructure(projectPath: string) {
-  const paths = [];
-  
-  if (await fs.pathExists(path.join(projectPath, 'app'))) {
-    paths.push({
-      name: 'app/canopy',
-      value: 'app/canopy',
-      short: 'app/canopy'
-    });
-    
-    if (await fs.pathExists(path.join(projectPath, 'app/components'))) {
-      paths.push({
-        name: 'app/components/canopy',
-        value: 'app/components/canopy',
-        short: 'app/components/canopy'
-      });
-    }
-  }
-
-  if (await fs.pathExists(path.join(projectPath, 'pages'))) {
-    if (await fs.pathExists(path.join(projectPath, 'components'))) {
-      paths.push({
-        name: 'components/canopy',
-        value: 'components/canopy',
-        short: 'components/canopy'
-      });
-    }
-  }
-
-  if (await fs.pathExists(path.join(projectPath, 'src'))) {
-    paths.push({
-      name: 'src/canopy',
-      value: 'src/canopy',
-      short: 'src/canopy'
-    });
-    
-    if (await fs.pathExists(path.join(projectPath, 'src/components'))) {
-      paths.push({
-        name: 'src/components/canopy',
-        value: 'src/components/canopy',
-        short: 'src/components/canopy'
-      });
-    }
-  }
-
-  paths.push({
-    name: 'Custom location...',
-    value: 'custom',
-    short: 'custom'
-  });
-
-  return paths;
-}
+import { detectProjectStructure } from "../utils/project-structure";
 
 async function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
